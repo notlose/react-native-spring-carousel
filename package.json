@@ -1,0 +1,27 @@
+{
+  "name": "react-native-spring-carousel",
+  "version": "0.1.0",
+  "description": "Carousel component for react-native implemented by View",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/notlose/react-native-spring-carousel.git"
+  },
+  "keywords": [
+    "react-native",
+    "carousel"
+  ],
+  "author": "Alex Spring <notlose@hotmail.com> (https://github.com/notlose)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/notlose/react-native-spring-carousel/issues"
+  },
+  "homepage": "https://github.com/notlose/react-native-spring-carousel",
+  "dependencies": {
+    "react-timer-mixin": "^0.13.3",
+    "rebound":"^2.14.15"
+  }
+}
