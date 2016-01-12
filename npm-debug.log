@@ -1,0 +1,100 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/alexhsieh/.nvm/versions/node/v5.4.0/bin/node',
+1 verbose cli   '/Users/alexhsieh/.nvm/versions/node/v5.4.0/bin/npm',
+1 verbose cli   'publish',
+1 verbose cli   './' ]
+2 info using npm@2.14.15
+3 info using node@v5.4.0
+4 verbose publish [ './' ]
+5 silly cache add args [ './', null ]
+6 verbose cache add spec ./
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: './',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: './',
+7 silly cache add   spec: '/Users/alexhsieh/react-native-spring-carousel',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/alexhsieh/.npm/react-native-spring-carousel/0.1.0/package.tgz not in flight; packing
+9 verbose tar pack [ '/Users/alexhsieh/.npm/react-native-spring-carousel/0.1.0/package.tgz',
+9 verbose tar pack   '/Users/alexhsieh/react-native-spring-carousel' ]
+10 verbose tarball /Users/alexhsieh/.npm/react-native-spring-carousel/0.1.0/package.tgz
+11 verbose folder /Users/alexhsieh/react-native-spring-carousel
+12 info prepublish react-native-spring-carousel@0.1.0
+13 verbose addLocalTarball adding from inside cache /Users/alexhsieh/.npm/react-native-spring-carousel/0.1.0/package.tgz
+14 silly cache afterAdd react-native-spring-carousel@0.1.0
+15 verbose afterAdd /Users/alexhsieh/.npm/react-native-spring-carousel/0.1.0/package/package.json not in flight; writing
+16 verbose afterAdd /Users/alexhsieh/.npm/react-native-spring-carousel/0.1.0/package/package.json written
+17 silly publish { name: 'react-native-spring-carousel',
+17 silly publish   version: '0.1.0',
+17 silly publish   description: 'Carousel component for react-native implemented by View',
+17 silly publish   main: 'index.js',
+17 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+17 silly publish   repository:
+17 silly publish    { type: 'git',
+17 silly publish      url: 'git+https://github.com/notlose/react-native-spring-carousel.git' },
+17 silly publish   keywords: [ 'react-native', 'carousel' ],
+17 silly publish   author:
+17 silly publish    { name: 'Alex Spring',
+17 silly publish      email: 'notlose@hotmail.com',
+17 silly publish      url: 'https://github.com/notlose' },
+17 silly publish   license: 'MIT',
+17 silly publish   bugs: { url: 'https://github.com/notlose/react-native-spring-carousel/issues' },
+17 silly publish   homepage: 'https://github.com/notlose/react-native-spring-carousel',
+17 silly publish   dependencies: { 'react-timer-mixin': '^0.13.3', rebound: '^2.14.15' },
+17 silly publish   readme: '# react-native-spring-carousel\n\n# Carousel component for React Native implemented by View\n\n\n\n## Install\n\n```sh\n$ npm install react-native-spring-carousel --save\n```\n\n## Usage\n```js\nrender() {\n          return (\n            <Drawer\n              captureGestures={false}\n              acceptPan={false}\n              openDrawerThreshold={100}\n              openDrawerOffset={0.2}\n              relativeDrag={false}\n              ref="drawer"\n              content={<ControlPanel closeDrawer={this.closeControlPanel}/>}\n              closeDrawer={this.closeControlPanel}\n              >\n              <View>\n                <HeaderPanel onMenuPress={this.openControlPanel}/>\n                <Carousel width={width}\n                pagerColor="#000"\n                activePagerColor="#ff0000"\n                pagerSize={10}\n                pagerMargin={2}\n                >\n\n                   <View style={{width:width,height:300,backgroundColor:\'#aaa\',}}>\n                     <Text>Page 1</Text>\n                   </View>\n                   <View style={{width:width,height:300,backgroundColor:\'#bbb\',}}>\n                     <Text>Page 2</Text>\n                   </View>\n                   <View style={{width:width,height:300,backgroundColor:\'#ccc\',}}>\n                     <Text>Page 3</Text>\n                   </View>\n\n                </Carousel>\n              </View>\n            </Drawer>\n          );\n      }\n',
+17 silly publish   readmeFilename: 'README.md',
+17 silly publish   gitHead: 'abed823ca94aaf3be6a262d54dc01a70ea0d8260',
+17 silly publish   _id: 'react-native-spring-carousel@0.1.0',
+17 silly publish   _shasum: 'edf3a48b73de2da0439d25777a6320363ed03029',
+17 silly publish   _from: '.' }
+18 verbose getPublishConfig undefined
+19 silly mapToRegistry name react-native-spring-carousel
+20 silly mapToRegistry using default registry
+21 silly mapToRegistry registry https://registry.npmjs.org/
+22 silly mapToRegistry uri https://registry.npmjs.org/react-native-spring-carousel
+23 verbose publish registryBase https://registry.npmjs.org/
+24 silly publish uploading /Users/alexhsieh/.npm/react-native-spring-carousel/0.1.0/package.tgz
+25 verbose request uri https://registry.npmjs.org/react-native-spring-carousel
+26 verbose request sending authorization for write operation
+27 info attempt registry request try #1 at 17:59:17
+28 verbose request using bearer token for auth
+29 verbose request id c59483f4303cc852
+30 http request PUT https://registry.npmjs.org/react-native-spring-carousel
+31 http 403 https://registry.npmjs.org/react-native-spring-carousel
+32 verbose headers { 'content-type': 'application/json',
+32 verbose headers   'cache-control': 'max-age=300',
+32 verbose headers   'content-length': '95',
+32 verbose headers   'accept-ranges': 'bytes',
+32 verbose headers   date: 'Tue, 12 Jan 2016 09:59:18 GMT',
+32 verbose headers   via: '1.1 varnish',
+32 verbose headers   connection: 'keep-alive',
+32 verbose headers   'x-served-by': 'cache-hkg6826-HKG',
+32 verbose headers   'x-cache': 'MISS',
+32 verbose headers   'x-cache-hits': '0',
+32 verbose headers   'x-timer': 'S1452592758.154899,VS0,VE678' }
+33 verbose request invalidating /Users/alexhsieh/.npm/registry.npmjs.org/react-native-spring-carousel on PUT
+34 error publish Failed PUT 403
+35 verbose stack Error: "You cannot publish over the previously published version 0.1.0." : react-native-spring-carousel
+35 verbose stack     at makeError (/Users/alexhsieh/.nvm/versions/node/v5.4.0/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+35 verbose stack     at CachingRegistryClient.<anonymous> (/Users/alexhsieh/.nvm/versions/node/v5.4.0/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+35 verbose stack     at Request._callback (/Users/alexhsieh/.nvm/versions/node/v5.4.0/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+35 verbose stack     at Request.self.callback (/Users/alexhsieh/.nvm/versions/node/v5.4.0/lib/node_modules/npm/node_modules/request/request.js:198:22)
+35 verbose stack     at emitTwo (events.js:87:13)
+35 verbose stack     at Request.emit (events.js:172:7)
+35 verbose stack     at Request.<anonymous> (/Users/alexhsieh/.nvm/versions/node/v5.4.0/lib/node_modules/npm/node_modules/request/request.js:1035:10)
+35 verbose stack     at emitOne (events.js:82:20)
+35 verbose stack     at Request.emit (events.js:169:7)
+35 verbose stack     at IncomingMessage.<anonymous> (/Users/alexhsieh/.nvm/versions/node/v5.4.0/lib/node_modules/npm/node_modules/request/request.js:962:12)
+36 verbose statusCode 403
+37 verbose pkgid react-native-spring-carousel
+38 verbose cwd /Users/alexhsieh/react-native-spring-carousel
+39 error Darwin 15.2.0
+40 error argv "/Users/alexhsieh/.nvm/versions/node/v5.4.0/bin/node" "/Users/alexhsieh/.nvm/versions/node/v5.4.0/bin/npm" "publish" "./"
+41 error node v5.4.0
+42 error npm  v2.14.15
+43 error code E403
+44 error "You cannot publish over the previously published version 0.1.0." : react-native-spring-carousel
+45 error If you need help, you may report this error at:
+45 error     <https://github.com/npm/npm/issues>
+46 verbose exit [ 1, true ]

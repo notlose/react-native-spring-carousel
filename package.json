@@ -1,6 +1,6 @@
 {
   "name": "react-native-spring-carousel",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Carousel component for react-native implemented by View",
   "main": "index.js",
   "scripts": {
