@@ -12,6 +12,11 @@ $ npm install react-native-spring-carousel --save
 
 ## Usage
 ```js
+require('react-native-spring-carousel');
+
+...
+
+
 render() {
           return (
             <Drawer
