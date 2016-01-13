@@ -67,12 +67,12 @@ var carousel = React.createClass({
   },
   _handlePanResponderMove: function(e: Object, gestureState: Object) {
     this.released = false;
-    if(gestureState.dx+this._previousLeft< -1*(width*3)){
+    if(gestureState.dx+this._previousLeft< -1*(width*this.props.children.length)){
         this._previousLeft=gestureState.dx*-1;
     }
 
     if(gestureState.dx+this._previousLeft>0){
-        this._previousLeft=width*-3 - gestureState.dx;
+        this._previousLeft=width*-this.props.children.length - gestureState.dx;
     }
 
     this.refs.scrollPanel.setNativeProps({
@@ -125,7 +125,7 @@ var carousel = React.createClass({
       <View style={{ flex: 1,width:width,flexDirection:'column', }}
         {...this._panResponder.panHandlers}
         >
-        <View ref="scrollPanel" style={{ flex: 1,width:width*3,flexDirection:'row', }}>
+        <View ref="scrollPanel" style={{ flex: 1,width:width*this.props.children.length,flexDirection:'row', }}>
         {this.props.children[this.props.children-1]}
         {this.props.children}
         {this.props.children[0]}
