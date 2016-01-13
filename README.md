@@ -1,7 +1,7 @@
 # react-native-spring-carousel
 
-# Carousel component for React Native implemented by View
-# support IOS and Android
+Carousel component for React Native implemented by View
+Support IOS and Android
 
 
 ## Install
