@@ -122,7 +122,7 @@ var carousel = React.createClass({
   render() {
 
     return (
-      <View style={{ flex: 1,width:width,flexDirection:'column', }}
+      <View style={{ flex: 1,width:this.props.width,height:this.props.height,flexDirection:'column', }}
         {...this._panResponder.panHandlers}
         >
         <View ref="scrollPanel" style={{ flex: 1,width:width*this.props.children.length,flexDirection:'row', }}>
