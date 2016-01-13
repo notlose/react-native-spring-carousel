@@ -114,7 +114,7 @@ var carousel = React.createClass({
     }
     var left = (width - (this.props.children.length * (this.props.pagerSize+this.props.pagerMargin)))/2;
     return (
-      <View style={{ flex: 1,width:width,flexDirection:'row', marginTop:-30,left:left,alignItems:'center' }}>
+      <View style={{ flex: 1,width:width,flexDirection:'row', marginTop:this.props.pagerOffset,left:left,alignItems:'center' }}>
         {pager}
       </View>
     );
