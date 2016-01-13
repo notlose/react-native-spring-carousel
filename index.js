@@ -110,11 +110,11 @@ var carousel = React.createClass({
       }
 
       pager.push(
-        <View key={i} style={{ borderRadius:this.props.pagerSize,width:this.props.pagerSize,height:this.props.pagerSize,margin:this.props.pagerMargin,backgroundColor:color }}></View>);
+        <View key={i} style={{ borderRadius:this.props.pagerSize/2,width:this.props.pagerSize,height:this.props.pagerSize,margin:this.props.pagerMargin,backgroundColor:color }}></View>);
     }
     var left = (width - (this.props.children.length * (this.props.pagerSize+this.props.pagerMargin)))/2;
     return (
-      <View style={{ flex: 1,width:width,flexDirection:'row', marginTop:this.props.pagerOffset,left:left,alignItems:'center' }}>
+      <View style={{ flex: 1,width:width,flexDirection:'row', top:this.props.pagerOffset,left:left,alignItems:'center',backgroundColor:'transparent' }}>
         {pager}
       </View>
     );

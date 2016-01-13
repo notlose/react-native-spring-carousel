@@ -1,6 +1,6 @@
 {
   "name": "react-native-spring-carousel",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Carousel component for react-native implemented by View",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,8 @@
     "react",
     "native",
     "ios",
-    "android"
+    "android",
+    "react-component"
   ],
   "author": "Alex Spring <notlose@hotmail.com> (https://github.com/notlose)",
   "license": "MIT",
