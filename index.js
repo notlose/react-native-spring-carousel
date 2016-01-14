@@ -3,6 +3,8 @@ var { PanResponder, View, StyleSheet, Dimensions, PropTypes} = React
 var {height, width} = Dimensions.get('window');
 var rebound = require('rebound');
 var released = true;
+var distinct = 0;
+var previousPage=0;
 var carousel = React.createClass({
   _panResponder: {},
   _previousLeft: 0,
@@ -54,6 +56,7 @@ var carousel = React.createClass({
 
   _handleStartShouldSetPanResponder: function(e: Object, gestureState: Object): boolean {
     // Should we become active when the user presses down on the circle?
+    distinct=0;
     return true;
   },
 
@@ -67,6 +70,7 @@ var carousel = React.createClass({
   },
   _handlePanResponderMove: function(e: Object, gestureState: Object) {
     this.released = false;
+    distinct+=gestureState.dx;
     if(gestureState.dx+this._previousLeft< -1*(width*this.props.children.length)){
         this._previousLeft=gestureState.dx*-1;
     }
@@ -88,13 +92,24 @@ var carousel = React.createClass({
     this.released = true;
     this._previousLeft += gestureState.dx;
     var currentPage = Math.floor((this._previousLeft+ width/2) / width);
+
+    if(currentPage==previousPage){
+        if(gestureState.dx >50){
+          currentPage++;
+        }
+        if(gestureState.dx <-50){
+          currentPage--;
+        }
+    }
+
+    previousPage = currentPage;
     this._scrollSpring.setEndValue( currentPage * width);
     this._currentPage = currentPage*-1 +1;
     if(this._currentPage > this.props.children.length){
       this._currentPage =1;
     }
     this.setState({currentPage:this._currentPage});
-    console.log(this._currentPage);
+
   //  this._previousTop += gestureState.dy;
   },
 
