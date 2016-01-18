@@ -1,6 +1,6 @@
 {
   "name": "react-native-spring-carousel",
-  "version": "0.1.11",
+  "version": "0.2.0",
   "description": "Carousel component for react-native implemented by View",
   "main": "index.js",
   "scripts": {
@@ -27,6 +27,6 @@
   "homepage": "https://github.com/notlose/react-native-spring-carousel",
   "dependencies": {
     "react-timer-mixin": "^0.13.3",
-    "rebound":"^0.0.13"
+    "rebound": "^0.0.13"
   }
 }
