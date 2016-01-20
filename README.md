@@ -21,10 +21,13 @@ onPressSlide(index){
 
 render() {
           return (
-                <Carousel width={width}
+                <Carousel
+                width={width}
+                height={height}
                 pagerColor="#000"
                 activePagerColor="#ff0000"
                 pagerSize={10}
+                pagerOffset={10}
                 pagerMargin={2}
                 onPress={this.onPressSlide}
                 >
@@ -42,6 +45,7 @@ render() {
       }
 ```
 ## Update
+0.2.1 bugs fixed
 0.2.0 added onPress callback
 
 ## todo

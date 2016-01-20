@@ -15,6 +15,8 @@ var carousel = React.createClass({
     };
   },
   componentWillMount: function() {
+    width = this.props.width;
+    height = this.props.height;
     this._panResponder = PanResponder.create({
       onStartShouldSetPanResponder: this._handleStartShouldSetPanResponder,
       onPanResponderMove: this._handlePanResponderMove,
@@ -128,7 +130,7 @@ var carousel = React.createClass({
     }
     var left = (width - (this.props.children.length * (this.props.pagerSize+this.props.pagerMargin)))/2;
     return (
-      <View style={{ flex: 1,width:width,flexDirection:'row', top:this.props.pagerOffset,left:left,alignItems:'center',backgroundColor:'transparent' }}>
+      <View style={{ flex: 1,width:width,flexDirection:'row', position:'absolute',bottom:this.props.pagerOffset,left:left,alignItems:'center',backgroundColor:'transparent' }}>
         {pager}
       </View>
     );
@@ -136,7 +138,7 @@ var carousel = React.createClass({
   render() {
 
     return (
-      <View style={{ flex: 1,width:this.props.width,height:this.props.height,flexDirection:'column', }}
+      <View style={{ width:this.props.width,height:this.props.height,flexDirection:'column',overflow:'hidden' }}
         {...this._panResponder.panHandlers}
         >
         <View ref="scrollPanel" style={{ flex: 1,width:width*this.props.children.length,flexDirection:'row', }}>
