@@ -1,7 +1,10 @@
 # react-native-spring-carousel
 
 Carousel component for React Native implemented by View instead of ScrollView.
+
 Support IOS and Android.
+
+![My image](http://www.googledrive.com/host/0BwiaTbhy1w5COHdyWVBMcEJCRnc)
 
 
 ## Install
@@ -46,6 +49,7 @@ render() {
 ```
 ## Update
 0.2.1 bugs fixed
+
 0.2.0 added onPress callback
 
 ## todo
