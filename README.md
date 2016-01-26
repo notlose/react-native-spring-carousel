@@ -6,6 +6,7 @@ Support IOS and Android.
 
 ![My image](http://www.googledrive.com/host/0BwiaTbhy1w5COHdyWVBMcEJCRnc)
 
+<a href="http://www.googledrive.com/host/0BwiaTbhy1w5CbXNDYXpQckxFZE0/">Buy me a coffee if you like this</a>
 
 ## Install
 
