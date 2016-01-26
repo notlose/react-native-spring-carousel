@@ -35,6 +35,7 @@ render() {
                 pagerSize={10}
                 pagerOffset={10}
                 pagerMargin={2}
+                speed={2000}
                 onPress={this.onPressSlide}
                 >
                    <View style={{width:width,height:300,backgroundColor:'#aaa',}}>
@@ -51,6 +52,8 @@ render() {
       }
 ```
 ## Update
+0.3.0 added autoplay feature, you can define props - 'speed' to enable autoplay, remove speed to disable autoplay
+
 0.2.1 bugs fixed
 
 0.2.0 added onPress callback
