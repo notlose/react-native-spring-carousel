@@ -8,6 +8,8 @@ Support IOS and Android.
 
 <a href="http://www.googledrive.com/host/0BwiaTbhy1w5CbXNDYXpQckxFZE0/">Buy me a coffee if you like this</a>
 
+<a href="http://www.googledrive.com/host/0BwiaTbhy1w5CbXNDYXpQckxFZE0/"><img src="https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif" border="0"></a>
+
 ## Install
 
 ```sh
