@@ -5,6 +5,7 @@ var rebound = require('rebound');
 var released = true;
 var distinct = 0;
 var previousPage=0;
+var timer = null;
 var carousel = React.createClass({
   _panResponder: {},
   _previousLeft: 0,
@@ -27,21 +28,45 @@ var carousel = React.createClass({
     this.springSystem = new rebound.SpringSystem();
     this._scrollSpring = this.springSystem.createSpring();
     var springConfig = this._scrollSpring.getSpringConfig();
-    springConfig.tension = 230;
-    springConfig.friction = 10;
-
+    springConfig.tension = 110;
+    springConfig.friction = 30;
+    var that = this;
     this._scrollSpring.addListener({
       onSpringUpdate: () => {
         if(this.released){
-        this._previousLeft = this._scrollSpring.getCurrentValue();
-        this.refs.scrollPanel.setNativeProps({
-          style:{
-            left:this._scrollSpring.getCurrentValue()
-          }
-        })
-      }
+          this._previousLeft = this._scrollSpring.getCurrentValue();
+          this.refs.scrollPanel.setNativeProps({
+            style:{
+              left:this._scrollSpring.getCurrentValue()
+            }
+          })
+        }
       },
+      onSpringEndStateChange:()=>{
+        var that = this;
+        if(that.props.speed){
+          timer = setTimeout(function(){
+            var currentPage = Math.floor((that._previousLeft+ width/2) / width);
+
+            currentPage--;
+            if(currentPage<that.props.children.length*-1){
+              currentPage = -1;
+              that._scrollSpring.setCurrentValue((currentPage+1)*width);
+            }
+            that.movePage(currentPage);
+          },that.props.speed);
+        }
+      }
     });
+    if(this.props.speed){
+      timer = setTimeout(function(){
+        currentPage = -1;
+        that._scrollSpring.setCurrentValue((currentPage+1)*width);
+        that.released = true;
+        that.movePage(currentPage);
+      },this.props.speed);
+    }
+
 
   },
   onPressSlide:function(index){
@@ -61,6 +86,7 @@ var carousel = React.createClass({
   _handleStartShouldSetPanResponder: function(e: Object, gestureState: Object): boolean {
     // Should we become active when the user presses down on the circle?
     distinct=0;
+    clearTimeout(timer);
     return true;
   },
 
@@ -99,19 +125,24 @@ var carousel = React.createClass({
           if(realCurrentPage==0){
             realCurrentPage=1
           }
-          this.onPressSlide(realCurrentPage);
+          if(Math.abs(gestureState.dx)<10 && Math.abs(gestureState.dy)<10){
+            this.onPressSlide(realCurrentPage);
+          }
+
         }
     }
+    this.movePage(currentPage);
+  },
+  movePage(currentPage){
 
     previousPage = currentPage;
     this._scrollSpring.setEndValue( currentPage * width);
+
     this._currentPage = currentPage*-1 +1;
     if(this._currentPage > this.props.children.length){
       this._currentPage =1;
     }
     this.setState({currentPage:this._currentPage});
-
-  //  this._previousTop += gestureState.dy;
   },
 
   getPager() {
