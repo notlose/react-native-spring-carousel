@@ -52,6 +52,8 @@ render() {
       }
 ```
 ## Update
+0.3.2 remove listener onunmount
+
 0.3.1 fixed onpress issue
 
 0.3.0 added autoplay feature, you can define props - 'speed' to enable autoplay, remove speed to disable autoplay
