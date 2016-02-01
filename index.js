@@ -10,10 +10,16 @@ var carousel = React.createClass({
   _panResponder: {},
   _previousLeft: 0,
   _currentPage:1,
+  _scrollSpring:null,
+  springSystem:null,
   getInitialState() {
     return {
       currentPage: 1,
     };
+  },
+  componentWillUnmount: function() {
+    //console.log('remove listener')
+    this._scrollSpring.removeAllListeners();
   },
   componentWillMount: function() {
     width = this.props.width;
@@ -86,11 +92,16 @@ var carousel = React.createClass({
   _handleStartShouldSetPanResponder: function(e: Object, gestureState: Object): boolean {
     // Should we become active when the user presses down on the circle?
     distinct=0;
-    clearTimeout(timer);
+    if(timer){
+      clearTimeout(timer);
+    }
     return true;
   },
 
   _handlePanResponderMove: function(e: Object, gestureState: Object) {
+    if(timer){
+      clearTimeout(timer);
+    }
     this.released = false;
     distinct+=gestureState.dx;
     if(gestureState.dx+this._previousLeft< -1*(width*this.props.children.length)){
