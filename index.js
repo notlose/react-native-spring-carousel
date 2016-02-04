@@ -20,6 +20,9 @@ var carousel = React.createClass({
   componentWillUnmount: function() {
     //console.log('remove listener')
     this._scrollSpring.removeAllListeners();
+    if(timer){
+      clearTimeout(timer);
+    }
   },
   componentWillMount: function() {
     width = this.props.width;
