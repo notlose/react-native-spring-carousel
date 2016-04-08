@@ -69,7 +69,7 @@ var carousel = React.createClass({
     });
     if(this.props.speed){
       timer = setTimeout(function(){
-        currentPage = -1;
+        var currentPage = -1;   // if this.props.speed is not undefined, it will be error.
         that._scrollSpring.setCurrentValue((currentPage+1)*width);
         that.released = true;
         that.movePage(currentPage);
