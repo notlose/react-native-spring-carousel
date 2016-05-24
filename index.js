@@ -1,5 +1,7 @@
-var React = require('react-native')
-var { PanResponder, View, StyleSheet, Dimensions, PropTypes} = React
+var React = require('react')
+var ReactNative = require('react-native');
+var { PropTypes } = React
+var { PanResponder, View, StyleSheet, Dimensions } = ReactNative
 var {height, width} = Dimensions.get('window');
 var rebound = require('rebound');
 var released = true;
