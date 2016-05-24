@@ -52,6 +52,8 @@ render() {
       }
 ```
 ## Update
+0.3.4 added support for RN 0.26 (thanks @cornedor )
+
 0.3.2 remove listener onunmount
 
 0.3.1 fixed onpress issue
